@@ -41,10 +41,17 @@ function submitQuiz() {
         document.getElementById("message").textContent = "You scored " + score + " out of 100 & lean Democrat";
     }
 
+    if (score == 50) {
+        document.getElementById("message").textContent = "You scored " + score + " out of 100 & are a moderate";
+    }
+
     if (score > 100) {
         document.getElementById("message").textContent = "You're... interesting";
     }
     
+    else {
+        document.getElementById("message").textContent = "Something went wrong with your score";
+    }
 };
 
 //Accordian Function
