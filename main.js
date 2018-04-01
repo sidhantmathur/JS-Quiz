@@ -1,13 +1,16 @@
 document.getElementById("submitbtn").addEventListener("click", submitQuiz);
 
 function submitQuiz() {
+    //collect scores
     var ans1 = document.quiz.quest1.value;
     var ans2 = document.quiz.quest2.value;
     var ans3 = document.quiz.quest3.value;
     var ans4 = document.quiz.quest4.value;
     
+    //set baseline score
     var score = 50;
 
+    //set question values
     if (ans1 === "A") {
         score++;
     } else if (ans1 === "B") {
@@ -32,20 +35,20 @@ function submitQuiz() {
         score--;
     }
 
-
+    //set value results
     if (score < 50) {
         document.getElementById("message").textContent = "You scored " + score + " out of 100 & lean Republican";
     }
 
-    if (score > 50) {
+    else if (score > 50) {
         document.getElementById("message").textContent = "You scored " + score + " out of 100 & lean Democrat";
     }
 
-    if (score == 50) {
+    else if (score == 50) {
         document.getElementById("message").textContent = "You scored " + score + " out of 100 & are a moderate";
     }
 
-    if (score > 100) {
+    else if (score > 100) {
         document.getElementById("message").textContent = "You're... interesting";
     }
     
